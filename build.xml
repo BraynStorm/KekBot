@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project KekBot with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="E:/Development/Deploy/KekBot.jar">
+            <manifest>
+                <attribute name="Main-Class" value="braynstorm.kekbot.core.Main"/>
+                <attribute name="Class-Path" value=". KekBot_lib/tinylog.jar KekBot_lib/gson-2.3.1.jar"/>
+            </manifest>
+            <fileset dir="E:/Development/Workspace-New/KekBot/bin"/>
+            <fileset dir="E:/Development/Workspace-New/BLoggery/bin"/>
+        </jar>
+        <delete dir="E:/Development/Deploy/KekBot_lib"/>
+        <mkdir dir="E:/Development/Deploy/KekBot_lib"/>
+        <copy file="E:/Development/Workspace-New/LIB/tinylog.jar" todir="E:/Development/Deploy/KekBot_lib"/>
+        <copy file="E:/Development/Workspace-New/LIB/gson-2.3.1.jar" todir="E:/Development/Deploy/KekBot_lib"/>
+    </target>
+</project>
